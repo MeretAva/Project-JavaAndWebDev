@@ -48,7 +48,7 @@ input {
     width: fit-content;
 }
 
-.btn {
+.button {
     padding: 1.5rem;
     background-color: deeppink;
     color: white;
@@ -56,11 +56,11 @@ input {
     border-radius: 000.5rem 0.5rem;
 }
 
-input, .btn {
+input, .button {
     cursor: pointer;
 }
 
-.btn:hover {
+.button:hover {
     background-color: hotpink;
 }
 
