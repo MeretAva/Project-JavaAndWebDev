@@ -5,7 +5,7 @@ const nextButton = document.getElementById("next-button");
 const restartButton = document.getElementById("restart-button");
 const resultDiv = document.getElementById("result");
 
-let shuffledQuestions, currentQuestionIndex, score;
+let orderedQuestions, currentQuestionIndex, score;
 
 const questions = [
     {
@@ -59,7 +59,7 @@ startQuiz();
 function startQuiz() {
     score = 0;
     questionContainer.style.display = "flex";
-    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+    orderedQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
     nextButton.classList.remove("hide");
     restartButton.classList.add("hide");
@@ -69,7 +69,7 @@ function startQuiz() {
 
 function setNextQuestion() {
     resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
+    showQuestion(orderedQuestions[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
@@ -105,12 +105,12 @@ nextButton.addEventListener("click", () => {
         answerButtons.querySelectorAll("input")
     ).findIndex((radio) => radio.checked);
     if (answerIndex !== - 1) {
-        if (shuffledQuestions[currentQuestionIndex].answers[answerIndex].
+        if (orderedQuestions[currentQuestionIndex].answers[answerIndex].
             correct) {
             score++;
         }
         currentQuestionIndex++;
-        if (shuffledQuestions.length > currentQuestionIndex) {
+        if (orderedQuestions.length > currentQuestionIndex) {
             setNextQuestion();
         } else {
             endQuiz();
@@ -128,4 +128,8 @@ function endQuiz() {
     restartButton.classList.remove("hide");
     resultDiv.classList.remove("hide");
     resultDiv.innerText = 'Result display: ${score} / ${shuffledQuestions.length}';
+}
+
+function calculateScore() {
+    
 }

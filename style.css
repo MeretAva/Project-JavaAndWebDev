@@ -5,7 +5,50 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: floralwhite;
+    background-color: #D3D3D3;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 000.6rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+
+#heading-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+#heading {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+#info-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+#info-text {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .quiz-container {
@@ -17,6 +60,7 @@ body {
     border-radius: 0.5rem;
     box-shadow: 000.6rem 0.1rem rgba(0, 0, 0, 0.1);
 }
+
 
 #question-container {
     flex-direction: column;
@@ -75,4 +119,20 @@ input, .button {
 #question, #result {
     font-size: 1.5rem;
     font-weight: bold;
+    color: deeppink;
+}
+
+.footer-container {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 150px;
+    width: 100%;
+    background-color: darkgrey;
+    color: black;
+    text-align: center;
+}
+
+.copyright {
+    color: color rgba(0, 0, 0, 0.5);
 }
