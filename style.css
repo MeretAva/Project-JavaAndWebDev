@@ -1,5 +1,8 @@
 body {
+    position: relative;
     text-align: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 
@@ -8,11 +11,16 @@ body {
 }
 
 #quiz-container {
-    text-align: left;
+    padding-bottom: 100px;
 }
 
 input {
-    width: fit-content;
+   width: fit-content;
+}
+
+.question {
+    text-align: left;
+
 }
 
 .button {
@@ -36,16 +44,18 @@ input, .button {
 }
 
 footer {
-    position: fixed;
+    position: absolute;
     left: 0px;
     bottom: 0px;
-    height: 150px;
+    height: 100px;
     width: 100%;
     background-color: darkgrey;
     color: black;
     text-align: center;
+    font-size: smaller;
 }
 
 .copyright {
-    color: color rgba(0, 0, 0, 0.5);
+    color: dimgrey;
+    font-size: x-small;
 }

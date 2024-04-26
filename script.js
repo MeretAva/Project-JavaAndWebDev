@@ -1,7 +1,7 @@
 const submitButton = document.getElementById("submit-button");
 const restartButton = document.getElementById("restart-button");
 const resultDiv = document.getElementById("result");
-const quizAnswers = document.getElementsByClassName("answer")
+const quizAnswers = document.getElementsByClassName("answer");
 
 let score; 
 
@@ -18,8 +18,14 @@ function restartQuiz() {
 }
 
 function calculateScore() {
-    question-container.style.display="none";
-    resultDiv.classList.remove("hide");
+    //if (all checked) {
+        resultDiv.classList.remove("hide");
+        resultDiv.innerText = 'Result display here!';
+    //}
+    //else{
+    //    alert('Please selcet an answer for every question')
+    //}
+   
     
 }
 
