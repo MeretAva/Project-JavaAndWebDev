@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width"=device-width, initial-scale="1.0">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style2.css">
+        <script src="script2.js" defer></script>
         <meta name="description" content="Project: Java and Web Development">
         <meta name="author" content="Meret Ava Ditzler">
         <title>ThreeHorseQuiz</title>
@@ -12,41 +12,108 @@
 
     <body>
 
-        <div class="row">
-            <div class="column">
-                <div class="heading-container">
-                    <div id="heading-container">
-                        <h1 id="heading">ThreeHorsesQuiz</h1>
+        <header>
+
+            <h1 id="heading">ThreeHorsesQuiz</h1>
+            <p id="info-text">infotext</p>
+            <div class="images"></div>
+
+        </header>
+
+        <div class="quiz-container">
+
+            <div id="question" class="question-container">
+
+                <fieldset>
+
+                    <legend>Q1</legend>
+                  
+                    <div>
+                      <input type="radio" id="A1" name="question1" value="A1" class="answer" />
+                      <label for="huey">A1</label>
                     </div>
-                    <div id="info-container">
-                        <p id="info-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                            voluptua. At</p>
+                  
+                    <div>
+                      <input type="radio" id="A2" name="question1" value="A2" class="answer" />
+                      <label for="A2">A2</label>
                     </div>
-                </div>
+                  
+                    <div>
+                      <input type="radio" id="A3" name="question1" value="A3" class="answer" />
+                      <label for="A3">A3</label>
+                    </div>
+
+                  </fieldset>
+                  
+
             </div>
-            <div class="column">
-                <div class="quiz-container">
-                    <div id="question-container">
-                        <h3 id="question">Question</h3>
-                        <div id="answer-buttons"></div>
+            <div id="question" class="question-container">
+
+                <fieldset>
+                    
+                    <legend>Q2</legend>
+                  
+                    <div>
+                      <input type="radio" id="A1" name="question2" value="A1" class="answer" />
+                      <label for="huey">A1</label>
                     </div>
-                    <button id="next-button" class="button hide">Next Question</button>
-                    <div id="result" class="hide"></div>
-                    <input type="reset" value="Restart Quiz" id="restart-button" class="button hide">Restart Quiz</button>
-                </div>
+                  
+                    <div>
+                      <input type="radio" id="A2" name="question2" value="A2" class="answer" />
+                      <label for="A2">A2</label>
+                    </div>
+                  
+                    <div>
+                      <input type="radio" id="A3" name="question2" value="A3" class="answer" />
+                      <label for="A3">A3</label>
+                    </div>
+
+                  </fieldset>
+                
             </div>
-        </div>  
-        <div class="row">
-            <div class="footer-container">
-                <footer>
-                    <div class="footer-content">
-                        <h3>ThreeHorsesQuiz</h3>
-                        <p>This website was created for the Project: Java and Web Development.</p>
-                        <p class="copyright">Meret Ava Ditzler © 2024 - Project: Java and Web Development</p>
+            <div id="question" class="question-container">
+
+                <fieldset>
+                    
+                    <legend>Q3</legend>
+                  
+                    <div>
+                      <input type="radio" id="A1" name="question3" value="A1" class="answer" />
+                      <label for="huey">A1</label>
                     </div>
-                </footer>
-            </div>   
+                  
+                    <div>
+                      <input type="radio" id="A2" name="question3" value="A2" class="answer" />
+                      <label for="A2">A2</label>
+                    </div>
+                  
+                    <div>
+                      <input type="radio" id="A3" name="question3" value="A3" class="answer" />
+                      <label for="A3">A3</label>
+                    </div>
+
+                  </fieldset>
+                
+            </div>
+
+            <br>
+
+            <button id="submit-button" class="button">Submit Quiz</button>
+            <br>
+            <div id="result" class="hide"></div>
+            <br>
+            <button id="restart-button" class="button">Restart Quiz</button>
+
         </div>
+
+        <footer>
+
+            <h3>ThreeHorsesQuiz</h3>
+            <p>This website was created for the Project: Java and Web Development.</p>
+            <p class="copyright">Meret Ava Ditzler © 2024 - Project: Java and Web Development</p>
+
+        </footer>
+
     </body>
+
 </html>
