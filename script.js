@@ -38,35 +38,12 @@ function calculateScore() {
     (Q2A1.checked || Q2A2.checked || Q2A3.checked) && (Q3A1.checked || Q3A2.checked || Q3A3.checked)) {
         resultDiv.classList.remove("hide");
 
-        if (Q1A1.checked) {
-            scoreWatson++;
-        }
-        if (Q1A2.checked) {
-            scoreMilan++;
-        }
-        if (Q1A3.checked) {
-            scoreChopo++;
-        }
-        if (Q2A1.checked) {
-            scoreWatson++;
-        }
-        if (Q2A2.checked) {
-            scoreMilan++;
-        }
-        if (Q2A3.checked) {
-            scoreChopo++;
-        }
-        if (Q3A1.checked) {
-            scoreWatson++;
-        }
-        if (Q3A2.checked) {
-            scoreMilan++;
-        }
-        if (Q3A3.checked) {
-            scoreChopo++;
-        }
+        scoreWatson += (Q1A1.checked + Q2A1.checked + Q3A1.checked);
+        scoreMilan += (Q1A2.checked + Q2A2.checked + Q3A2.checked);
+        scoreChopo += (Q1A3.checked + Q2A3.checked + Q3A3.checked);
 
-        console.log(scoreWatson, scoreChopo, scoreMilan);
+
+        //console.log(scoreWatson, scoreChopo, scoreMilan);
     
         let maxScore = Math.max(scoreWatson, scoreChopo, scoreMilan);
 
