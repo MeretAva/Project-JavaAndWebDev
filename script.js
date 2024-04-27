@@ -16,6 +16,8 @@ let scoreWatson;
 let scoreMilan;
 let scoreChopo; 
 
+restartQuiz();
+
 
 function uncheckAll() {
     for (let answer of quizAnswers) {  
@@ -39,49 +41,56 @@ function calculateScore() {
         if (Q1A1.checked) {
             scoreWatson++;
         }
-        else if (Q1A2.checked) {
+        if (Q1A2.checked) {
             scoreMilan++;
         }
-        else if (Q1A3.checked) {
+        if (Q1A3.checked) {
             scoreChopo++;
         }
-        else if (Q2A1.checked) {
+        if (Q2A1.checked) {
             scoreWatson++;
         }
-        else if (Q2A2.checked) {
+        if (Q2A2.checked) {
             scoreMilan++;
         }
-        else if (Q3A3.checked) {
+        if (Q2A3.checked) {
             scoreChopo++;
         }
-        else if (Q3A1.checked) {
+        if (Q3A1.checked) {
             scoreWatson++;
         }
-        else if (Q3A2.checked) {
+        if (Q3A2.checked) {
             scoreMilan++;
         }
-        else if (Q3A3.checked) {
+        if (Q3A3.checked) {
             scoreChopo++;
         }
 
-        if ((scoreWatson >= scoreMilan) && (scoreWatson >= scoreChopo)) {
+        console.log(scoreWatson, scoreChopo, scoreMilan);
+    
+        let maxScore = Math.max(scoreWatson, scoreChopo, scoreMilan);
+
+
+        if (scoreWatson == scoreMilan && scoreWatson == scoreChopo) {
+            resultDiv.innerText = 'Oh wow! You have the same amount of similarity to all of my horses.';
+        }
+        else if (scoreWatson == maxScore) {
             resultDiv.innerText = 'Congratulations! You are most like my horse Watson.';
         }
-        else if ((scoreMilan >= scoreWatson) && (scoreMilan >= scoreChopo)) {
+        else if (scoreMilan == maxScore ) {
             resultDiv.innerText = 'Congratulations! You are most like my horse Milan.';
         } 
-        else if ((scoreChopo >= scoreMilan) && (scoreChopo >= scoreWatson)) {
+        else if (scoreChopo == maxScore) {
             resultDiv.innerText = 'Congratulations! You are most like my horse Chopo.';
         }
+        
         
     }
     else{
        alert('Please selcet an answer for every question')
     }
-   
     
 }
-
 
 restartButton.addEventListener("click", restartQuiz);
 
