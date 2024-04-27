@@ -2,19 +2,20 @@ const submitButton = document.getElementById("submit-button");
 const restartButton = document.getElementById("restart-button");
 const resultDiv = document.getElementById("result");
 const quizAnswers = document.getElementsByClassName("answer");
+const Q1A1 = document.getElementById('Q1A1');
+const Q1A2 = document.getElementById('Q1A2');
+const Q1A3 = document.getElementById('Q1A3');
+const Q2A1 = document.getElementById('Q2A1');
+const Q2A2 = document.getElementById('Q2A2');
+const Q2A3 = document.getElementById('Q2A3');
+const Q3A1 = document.getElementById('Q3A1');
+const Q3A2 = document.getElementById('Q3A2');
+const Q3A3 = document.getElementById('Q3A3');
 
 let scoreWatson;
 let scoreMilan;
 let scoreChopo; 
-let Q1A1 = document.getElementById('Q1A1');
-let Q1A2 = document.getElementById('Q1A2');
-let Q1A3 = document.getElementById('Q1A3');
-let Q2A1 = document.getElementById('Q2A1');
-let Q2A2 = document.getElementById('Q2A2');
-let Q2A3 = document.getElementById('Q2A3');
-let Q3A1 = document.getElementById('Q3A1');
-let Q3A2 = document.getElementById('Q3A2');
-let Q3A3 = document.getElementById('Q3A3');
+
 
 function uncheckAll() {
     for (let answer of quizAnswers) {  
@@ -36,31 +37,31 @@ function calculateScore() {
         resultDiv.classList.remove("hide");
 
         if (Q1A1.checked) {
-            scoreWatson ++;
+            scoreWatson++;
         }
         else if (Q1A2.checked) {
-            scoreMilan ++;
+            scoreMilan++;
         }
         else if (Q1A3.checked) {
-            scoreChopo ++;
+            scoreChopo++;
         }
         else if (Q2A1.checked) {
-            scoreWatson ++;
+            scoreWatson++;
         }
         else if (Q2A2.checked) {
-            scoreMilan ++;
+            scoreMilan++;
         }
         else if (Q3A3.checked) {
-            scoreChopo ++;
+            scoreChopo++;
         }
         else if (Q3A1.checked) {
-            scoreWatson ++;
+            scoreWatson++;
         }
         else if (Q3A2.checked) {
-            scoreMilan ++;
+            scoreMilan++;
         }
         else if (Q3A3.checked) {
-            scoreChopo ++;
+            scoreChopo++;
         }
 
         if ((scoreWatson >= scoreMilan) && (scoreWatson >= scoreChopo)) {
