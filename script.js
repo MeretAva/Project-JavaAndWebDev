@@ -11,6 +11,12 @@ const Q2A3 = document.getElementById('Q2A3');
 const Q3A1 = document.getElementById('Q3A1');
 const Q3A2 = document.getElementById('Q3A2');
 const Q3A3 = document.getElementById('Q3A3');
+const Q4A1 = document.getElementById('Q3A1');
+const Q4A2 = document.getElementById('Q3A2');
+const Q4A3 = document.getElementById('Q3A3');
+const Q5A1 = document.getElementById('Q3A1');
+const Q5A2 = document.getElementById('Q3A2');
+const Q5A3 = document.getElementById('Q3A3');
 
 let scoreWatson;
 let scoreMilan;
@@ -35,26 +41,23 @@ function restartQuiz() {
 
 function calculateScore() {
     if ((Q1A1.checked || Q1A2.checked || Q1A3.checked) && 
-    (Q2A1.checked || Q2A2.checked || Q2A3.checked) && (Q3A1.checked || Q3A2.checked || Q3A3.checked)) {
+    (Q2A1.checked || Q2A2.checked || Q2A3.checked) && (Q3A1.checked || Q3A2.checked || Q3A3.checked) &&
+    (Q4A1.checked || Q4A2.checked || Q4A3.checked) && (Q5A1.checked || Q5A2.checked || Q5A3.checked)) {
         resultDiv.classList.remove("hide");
 
-        scoreWatson += (Q1A1.checked + Q2A1.checked + Q3A1.checked);
-        scoreMilan += (Q1A2.checked + Q2A2.checked + Q3A2.checked);
-        scoreChopo += (Q1A3.checked + Q2A3.checked + Q3A3.checked);
+        scoreWatson += (Q1A1.checked + Q2A1.checked + Q3A1.checked + Q4A1.checked + Q5A1.checked);
+        scoreMilan += (Q1A2.checked + Q2A2.checked + Q3A2.checked + Q4A2.checked + Q5A3.checked);
+        scoreChopo += (Q1A3.checked + Q2A3.checked + Q3A3.checked + Q4A3.checked + Q5A3.checked);
 
 
         //console.log(scoreWatson, scoreChopo, scoreMilan);
     
         let maxScore = Math.max(scoreWatson, scoreChopo, scoreMilan);
-
-
-        if (scoreWatson == scoreMilan && scoreWatson == scoreChopo) {
-            resultDiv.innerText = 'Oh wow! You have the same amount of similarity to all of my horses.';
-        }
+        
         else if (scoreWatson == maxScore) {
             resultDiv.innerText = 'Congratulations! You are most like my horse Watson.';
         }
-        else if (scoreMilan == maxScore ) {
+        else if (scoreMilan == maxScore) {
             resultDiv.innerText = 'Congratulations! You are most like my horse Milan.';
         } 
         else if (scoreChopo == maxScore) {
