@@ -1,3 +1,7 @@
+// import React from "https://esm.run/react@18";
+// import { createRoot } from "https://esm.run/react-dom@18/client";
+// import confetti from "https://esm.run/canvas-confetti@1";
+
 const submitButton = document.getElementById("submit-button");
 const restartButton = document.getElementById("restart-button");
 const resultDiv = document.getElementById("result");
@@ -81,6 +85,65 @@ function calculateScore() {
     
 }
 
+// //ADD SOURCE
+// function Confetti() {
+//   function onClick() {
+//     confetti({
+//       particleCount: 150,
+//       spread: 60
+//     });
+//   }
+
+//   return (
+//     <button className="button" onClick={onClick}>
+//       <span>🐴</span>
+//       <span>Submit</span>
+//     </button>
+//   );
+// }
+
+// createRoot(document.getElementById("submit-button")).render(<App />);
+
+// //ADD SOURCE
+// function getAPI() {
+//     fetch('https://animals-by-api-ninjas.p.rapidapi.com/v1/animals?name=horse', {
+//         'method' : 'GET',
+//         'headers': {
+//             'X-RapidAPI-Key': '99062e5ffcmshc5f2fab3fb9324ep1da829jsnc938f065eeca', 
+//             'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
+//         }
+//     })
+//     .then(response => response.json());
+//     .then(response => 
+//         {console.log(response);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+// }
+
+
+//Animals by API Ninjas: https://rapidapi.com/apininjas/api/animals-by-api-ninjas/
+// const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals?name=horse';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '99062e5ffcmshc5f2fab3fb9324ep1da829jsnc938f065eeca',
+// 		'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
+// 	}
+// };
+
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.text();
+// 	console.log(result);
+// } catch (error) {
+// 	console.error(error);
+// }
+
 restartButton.addEventListener("click", restartQuiz);
 
 submitButton.addEventListener("click", calculateScore);
+
+
+
