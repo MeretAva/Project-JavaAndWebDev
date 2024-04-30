@@ -1,191 +1,325 @@
 <!DOCTYPE html>
 <html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-        <meta name="description" content="Project: Java and Web Development">
-        <meta name="author" content="Meret Ava Ditzler">
-        <title>ThreeHorseQuiz</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <meta name="description" content="Project: Java and Web Development" />
+    <meta name="author" content="Meret Ava Ditzler" />
+    <title>ThreeHorseQuiz</title>
+  </head>
 
-    <body>
+  <!--BODY START-->
+  <body>
+    <!--HEADER START-->
+    <header>
+      <div class="row">
+        <h1 id="heading">ThreeHorsesQuiz</h1>
+      </div>
 
-        <header>
-
-            <h1 id="heading">ThreeHorsesQuiz</h1>
-            <p id="info-text">My three horses, Watson, Milan and Chopo, take up most of the time of my day. Even when I am around my friends and family, they can not get me to stop talking about them.
-              Taking care of them and exercising them, or simply speding time with them, are some of my favourite things to do and I love sharing those moments with my family and loved ones. Since I have been told multiple times,
-              that I always talk about how different my three horses are, I have created this quiz to see which horse my friends and family are most like.
-              <br>
-              Enjoy the quiz!
-            </p>
-            <div class="images">
-              <div class="image">
-                <img src="Photos/Watsoin.jpeg" alt="A photo of Watson" style="width:166px;height:295px;">
-                <p class="caption">A photo of Watson</p> 
-              </div>
-              <div class="image">
-                <img src="Photos/Milan.jpeg" alt="A photo of Milan" style="max-width:166px;height:295px;">
-                <p class="caption">A photo of Milan</p>
-              </div>
-              <div class="image">
-                <img src="Photos/Chopo.jpeg" alt="A photo of Chopo" style="width:166px;height:295px;">
-                <p class="caption">A photo of Chopo</p>
-              </div>
+      <div class="row">
+        <div class="col-5 col-s-5">
+          <p id="info-text">
+            My three horses, Watson, Milan and Chopo, take up most of the time
+            of my day. Even when I am around my friends and family, they can not
+            get me to stop talking about them. Taking care of them and
+            exercising them, or simply speding time with them, are some of my
+            favourite things to do and I love sharing those moments with my
+            family and loved ones. Since I have been told multiple times, that I
+            always talk about how different my three horses are, I have created
+            this quiz to see which horse my friends and family are most like.
+            <br />
+            Enjoy the quiz!
+          </p>
+        </div>
+        <div class="col-7 col-s-7">
+          <div class="images">
+            <div class="image">
+              <img
+                src="Photos/Watsoin.jpeg"
+                alt="A photo of Watson"
+                style="width: 166px; height: 295px"
+              />
+              <p class="caption">A photo of Watson</p>
             </div>
-
-
-        </header>
-
-        <div class="quiz-container">
-
-            <div id="question" class="question-container">
-
-                <fieldset>
-
-                    <legend>Which three words describe your character the best?</legend>
-                  
-                    <div>
-                      <input type="radio" id="Q1A1" name="question1" value="A1" class="answer" />
-                      <label for="A1">energetic, loyal, cautious</label>
-                    </div>
-                  
-                    <div>
-                      <input type="radio" id="Q1A2" name="question1" value="A2" class="answer" />
-                      <label for="A2">loving, calm, cooperative</label>
-                    </div>
-                  
-                    <div>
-                      <input type="radio" id="Q1A3" name="question1" value="A3" class="answer" />
-                      <label for="A3">independent, funny, mischievous</label>
-                    </div>
-
-                  </fieldset>
-                  
-
+            <div class="image">
+              <img
+                src="Photos/Milan.jpeg"
+                alt="A photo of Milan"
+                style="max-width: 166px; height: 295px"
+              />
+              <p class="caption">A photo of Milan</p>
             </div>
-            <div id="question" class="question-container">
-
-                <fieldset>
-                    
-                    <legend>Who knows you best?</legend>
-                  
-                    <div>
-                      <input type="radio" id="Q2A1" name="question2" value="A1" class="answer" />
-                      <label for="A1">My close friends</label>
-                    </div>
-                  
-                    <div>
-                      <input type="radio" id="Q2A2" name="question2" value="A2" class="answer" />
-                      <label for="A2">I don't keep secrets, everyone I know knows me the best</label>
-                    </div>
-                  
-                    <div>
-                      <input type="radio" id="Q2A3" name="question2" value="A3" class="answer" />
-                      <label for="A3">My mother/father</label>
-                    </div>
-
-                  </fieldset>
-                
-            </div>
-            <div id="question" class="question-container">
-
-                <fieldset>
-                    
-                    <legend>What is your favourite colour?</legend>
-                  
-                    <div>
-                      <input type="radio" id="Q3A1" name="question3" value="A1" class="answer" />
-                      <label for="A1">Very bright and colourful colours, like orange and pink</label>
-                    </div>
-                  
-                    <div>
-                      <input type="radio" id="Q3A2" name="question3" value="A2" class="answer" />
-                      <label for="A2">Classic colours, like blue and red</label>
-                    </div>
-                  
-                    <div>
-                      <input type="radio" id="Q3A3" name="question3" value="A3" class="answer" />
-                      <label for="A3">Plain dark colours, like black and brown</label>
-                    </div>
-
-                  </fieldset>
-                
-            </div>
-
-            <div id="question" class="question-container">
-
-              <fieldset>
-                  
-                  <legend>What is your favourite thing to do in the afternoon?</legend>
-                
-                  <div>
-                    <input type="radio" id="Q4A1" name="question4" value="A1" class="answer" />
-                    <label for="A1">Do any kind of exercise</label>
-                  </div>
-                
-                  <div>
-                    <input type="radio" id="Q4A2" name="question4" value="A2" class="answer" />
-                    <label for="A2">Have a nice and relaxing nap</label>
-                  </div>
-                
-                  <div>
-                    <input type="radio" id="Q4A3" name="question4" value="A3" class="answer" />
-                    <label for="A3">Go for a walk through the woods</label>
-                  </div>
-
-                </fieldset>
-              
-          </div>
-
-          <div id="question" class="question-container">
-
-            <fieldset>
-                
-                <legend>How do you typically approach new people?</legend>
-              
-                <div>
-                  <input type="radio" id="Q5A1" name="question5" value="A1" class="answer" />
-                  <label for="A1">With some hesitation or nervouseness, but still willing to engage</label>
-                </div>
-              
-                <div>
-                  <input type="radio" id="Q5A2" name="question5" value="A2" class="answer" />
-                  <label for="A2">With excitement and a desire to get to know them</label>
-                </div>
-              
-                <div>
-                  <input type="radio" id="Q5A3" name="question5" value="A3" class="answer" />
-                  <label for="A3">With reluctance or avoidance</label>
-                </div>
-
-              </fieldset>
-            
-          </div>
-
-          <div class="button-container">
-            <div class="button-box">
-              <button id="restart-button" class="button">Restart Quiz</button>
-            </div>
-            <div class="button-box">
-              <button id="submit-button" class="button">Submit Quiz</button>
+            <div class="image">
+              <img
+                src="Photos/Chopo.jpeg"
+                alt="A photo of Chopo"
+                style="width: 166px; height: 295px"
+              />
+              <p class="caption">A photo of Chopo</p>
             </div>
           </div>
-          <div id="result" class="hide"></div>
-          
+        </div>
+      </div>
+    </header>
+    <!--HEADER END-->
 
+    <!--QUIZ START-->
+
+    <div class="quiz-container">
+      <div class="row">
+        <!--QUESTIONS START-->
+
+        <div id="question" class="question-container">
+          <fieldset>
+            <legend>
+              Question 1: Which three words describe your character the best?
+            </legend>
+
+            <div>
+              <input
+                type="radio"
+                id="Q1A1"
+                name="question1"
+                value="A1"
+                class="answer"
+              />
+              <label for="A1">Energetic, loyal, cautious</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q1A2"
+                name="question1"
+                value="A2"
+                class="answer"
+              />
+              <label for="A2">Loving, calm, cooperative</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q1A3"
+                name="question1"
+                value="A3"
+                class="answer"
+              />
+              <label for="A3">Independent, funny, mischievous</label>
+            </div>
+          </fieldset>
+        </div>
+        <div id="question" class="question-container">
+          <fieldset>
+            <legend>Question 2: Who knows you best?</legend>
+
+            <div>
+              <input
+                type="radio"
+                id="Q2A1"
+                name="question2"
+                value="A1"
+                class="answer"
+              />
+              <label for="A1">My close friends</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q2A2"
+                name="question2"
+                value="A2"
+                class="answer"
+              />
+              <label for="A2"
+                >I don't keep secrets, everyone I know knows me the best</label
+              >
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q2A3"
+                name="question2"
+                value="A3"
+                class="answer"
+              />
+              <label for="A3">My mother/father</label>
+            </div>
+          </fieldset>
+        </div>
+        <div id="question" class="question-container">
+          <fieldset>
+            <legend>Question 3: What is your favourite colour?</legend>
+
+            <div>
+              <input
+                type="radio"
+                id="Q3A1"
+                name="question3"
+                value="A1"
+                class="answer"
+              />
+              <label for="A1"
+                >Very bright and colourful colours, like orange and pink</label
+              >
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q3A2"
+                name="question3"
+                value="A2"
+                class="answer"
+              />
+              <label for="A2">Classic colours, like blue and red</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q3A3"
+                name="question3"
+                value="A3"
+                class="answer"
+              />
+              <label for="A3">Plain dark colours, like black and brown</label>
+            </div>
+          </fieldset>
         </div>
 
-        <footer>
+        <div id="question" class="question-container">
+          <fieldset>
+            <legend>
+              Question 4: What is your favourite thing to do in the afternoon?
+            </legend>
 
-          <h3>ThreeHorsesQuiz</h3>
-          <p>This website was created for the Project: Java and Web Development.</p>
-          <p class="copyright">Meret Ava Ditzler © 2024 - Project: Java and Web Development</p>
+            <div>
+              <input
+                type="radio"
+                id="Q4A1"
+                name="question4"
+                value="A1"
+                class="answer"
+              />
+              <label for="A1">Do any kind of exercise</label>
+            </div>
 
-        </footer>
+            <div>
+              <input
+                type="radio"
+                id="Q4A2"
+                name="question4"
+                value="A2"
+                class="answer"
+              />
+              <label for="A2">Have a nice and relaxing nap</label>
+            </div>
 
-    </body>
+            <div>
+              <input
+                type="radio"
+                id="Q4A3"
+                name="question4"
+                value="A3"
+                class="answer"
+              />
+              <label for="A3">Go for a walk through the woods</label>
+            </div>
+          </fieldset>
+        </div>
 
+        <div id="question" class="question-container">
+          <fieldset>
+            <legend>
+              Question 5: How do you typically approach new people?
+            </legend>
+
+            <div>
+              <input
+                type="radio"
+                id="Q5A1"
+                name="question5"
+                value="A1"
+                class="answer"
+              />
+              <label for="A1"
+                >With some hesitation or nervouseness, but still willing to
+                engage</label
+              >
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q5A2"
+                name="question5"
+                value="A2"
+                class="answer"
+              />
+              <label for="A2"
+                >With excitement and a desire to get to know them</label
+              >
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="Q5A3"
+                name="question5"
+                value="A3"
+                class="answer"
+              />
+              <label for="A3">With reluctance or avoidance</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!--QUESTIONS END-->
+      </div>
+
+      <!--BUTTON START-->
+
+      <div class="row">
+        <div class="button-container">
+          <div class="button-box col-6 col-s-6">
+            <button id="restart-button" class="button">Restart Quiz</button>
+          </div>
+          <div class="button-box col-6 col-s-6">
+            <button id="submit-button" class="button">Submit Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="result" class="hide col-12 col-s-12"></div>
+      </div>
+
+      <!--BUTTON END-->
+    </div>
+
+    <!--QUIZ END-->
+
+    <!--FOOTER START-->
+
+    <footer>
+      <div class="row">
+        <h3>ThreeHorsesQuiz</h3>
+        <p>
+          This website was created for the Project: Java and Web Development.
+        </p>
+        <p class="copyright">
+          Meret Ava Ditzler © 2024 - Project: Java and Web Development
+        </p>
+      </div>
+    </footer>
+
+    <!--FOOTER END-->
+  </body>
+
+  <!--BODY END-->
 </html>

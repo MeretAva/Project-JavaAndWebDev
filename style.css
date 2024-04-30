@@ -1,5 +1,66 @@
+* {
+    box-sizing: border-box;
+  }
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+    .images {
+        display: none;
+      }
+  }
+
+/* For tabletss: */ 
+@media only screen and (min-width: 600px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+
+
+ /* For desktops: */  
+ @media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    #info-text {
+        font-size: 20px;
+    }
+ }
+
+
 body {
-    position: relative;
+    /* position: relative; */
     text-align: center;
     justify-content: center;
     min-height: 100vh;
@@ -15,8 +76,8 @@ body {
 }
 
 #info-text {
-    padding-bottom: 25px;
-    padding-top: 25px;
+    border: solid;
+    border-color: black;
 }
 
 .images{
@@ -24,7 +85,9 @@ body {
 }
 
 .image{
-    width: 33%;
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .caption {
@@ -40,6 +103,7 @@ body {
 .question-container {
    padding-top: 5px;
    padding-bottom: 5px;
+   vertical-align: middle;
 }
 
 
@@ -52,6 +116,8 @@ body {
     display: flex;
     padding-top: 25px;
     padding-bottom: 25px;
+    padding-left: 300px;
+    padding-right: 300px;
 }
 
 .button-box {
@@ -67,13 +133,13 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.button:active {
-    transform: scale(1.01);
-  }
-
 #restart-button{
     background-color: darkgray;
 }
+
+.button:active {
+    transform: scale(1.01);
+  }
 
 input, .button {
     cursor: pointer;
@@ -87,13 +153,17 @@ input, .button {
     display: none;
 }
 
+#result {
+    font-weight: bolder;
+}
+
 
 footer {
     position: static;
     padding-top: 2px;
     left: 0px;
     bottom: 0px;
-    height: 100px;
+    height: auto;
     width: 100%;
     background-color: darkgrey;
     color: black;
