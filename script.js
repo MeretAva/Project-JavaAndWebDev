@@ -2,6 +2,7 @@
 const submitButton = document.getElementById("submit-button");
 const restartButton = document.getElementById("restart-button");
 const resultDiv = document.getElementById("result");
+const APIDiv = document.getElementById("APIcontent");
 const quizAnswers = document.getElementsByClassName("answer");
 const Q1A1 = document.getElementById("Q1A1");
 const Q1A2 = document.getElementById("Q1A2");
@@ -44,6 +45,7 @@ function restartQuiz() {
   scoreChopo = 0;
   //hiding the result division
   resultDiv.classList.add("hide");
+  APIDiv.classList.add("hide");
 }
 
 //function to calculate the score
@@ -56,8 +58,9 @@ function calculateScore() {
     (Q4A1.checked || Q4A2.checked || Q4A3.checked) &&
     (Q5A1.checked || Q5A2.checked || Q5A3.checked)
   ) {
-    //unhiding the divison class
+    //unhiding the divisons for the results and the API content
     resultDiv.classList.remove("hide");
+    APIDiv.classList.remove("hide");
 
     //incrementing each score if the correct answer has been selected
     scoreWatson +=
@@ -90,9 +93,6 @@ function calculateScore() {
       resultDiv.innerText =
         "Congratulations! You are most like my horse Chopo. Chopo has a beautiful chocolate colour and a shiny coat. At first he might seem a bit grumpy but once he has gotten to know someone he won't leave their side again. He is most likely the coolest horse I own.";
     }
-
-    //fetching the API to display information in the result divison
-    getAPI();
   }
   //alert the user if questions have been left unanswered
   else {
@@ -119,8 +119,34 @@ fetchData();
 async function fetchData() {
   try {
     const response = await fetch(url, options);
-    const result = await response.text();
-    console.log(result);
+    const data = await response.json();
+    const horseData = data.filter((item) => item.name === "Horse")[0];
+
+    console.log(horseData);
+
+    const taxonomy = horseData.taxonomy;
+    console.log(taxonomy);
+    console.log(Object.keys(taxonomy));
+    for (const key of Object.keys(taxonomy)) {
+      console.log(key, taxonomy[key]);
+      const node = document.createElement("li");
+      const textnode = document.createTextNode(`${key}: ${taxonomy[key]}`);
+      node.appendChild(textnode);
+      document.getElementById("horseTaxonomy").appendChild(node);
+    }
+
+    const characteristics = horseData.characteristics;
+    console.log(characteristics);
+    console.log(Object.keys(characteristics));
+    for (const key of Object.keys(characteristics)) {
+      console.log(key, characteristics[key]);
+      const node = document.createElement("li");
+      const textnode = document.createTextNode(
+        `${key}: ${characteristics[key]}`
+      );
+      node.appendChild(textnode);
+      document.getElementById("horseCharacteristics").appendChild(node);
+    }
   } catch (error) {
     console.error(error);
   }

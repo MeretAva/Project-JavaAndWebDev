@@ -213,6 +213,25 @@ input,
   border-color: hotpink;
   background-color: white;
   padding: 1rem;
+  margin-bottom: 25px;
+}
+
+#APIcontent {
+  border: solid;
+  border-style: double;
+  border-width: 5px;
+  border-color: dimgray;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 30px;
+}
+
+#horseTaxonomy {
+  text-align: left;
+}
+
+#horseCharacteristics {
+  text-align: left;
 }
 
 footer {
