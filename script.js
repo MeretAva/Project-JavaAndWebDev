@@ -100,10 +100,11 @@ function calculateScore() {
   }
 }
 
+//Adding event listeners to both buttons
 restartButton.addEventListener("click", restartQuiz);
-
 submitButton.addEventListener("click", calculateScore);
 
+//Accessing the API
 const url =
   "https://animals-by-api-ninjas.p.rapidapi.com/v1/animals?name=Horse";
 const options = {
@@ -114,16 +115,20 @@ const options = {
   },
 };
 
+//Calling the function to fetch the content from the API
 fetchData();
 
+//function to fetch data from the API
 async function fetchData() {
   try {
     const response = await fetch(url, options);
     const data = await response.json();
     const horseData = data.filter((item) => item.name === "Horse")[0];
 
+    //Logging the correct data in the console
     console.log(horseData);
 
+    //Logging the sub-category Taxonomy in the console and adding the keys and values to a list
     const taxonomy = horseData.taxonomy;
     console.log(taxonomy);
     console.log(Object.keys(taxonomy));
@@ -135,6 +140,7 @@ async function fetchData() {
       document.getElementById("horseTaxonomy").appendChild(node);
     }
 
+    //Logging the sub-category Characteristics in the console and adding the keys and values to a list
     const characteristics = horseData.characteristics;
     console.log(characteristics);
     console.log(Object.keys(characteristics));
