@@ -30,7 +30,7 @@
 }
 
 /* For tabletss: */
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 1070px) {
   .col-s-1 {
     width: 8.33%;
   }
@@ -67,10 +67,13 @@
   .col-s-12 {
     width: 100%;
   }
+  div.images {
+    display: none;
+  }
 }
 
 /* For desktops: */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1070px) {
   .col-1 {
     width: 8.33%;
   }
@@ -110,7 +113,7 @@
   #info-text {
     font-size: 20px;
   }
-  .quiz-container {
+  div.quiz-container {
     font-size: 18px;
     padding-bottom: 100px;
   }
@@ -139,6 +142,11 @@ body {
 
 .images {
   display: flex;
+}
+
+img {
+  width: 166px;
+  height: 295px;
 }
 
 .image {
