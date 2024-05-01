@@ -74,13 +74,13 @@ function calculateScore() {
     let maxScore = Math.max(scoreWatson, scoreChopo, scoreMilan);
 
     //displaying the correct result in the result division
-    if (scoreWatson == scoreMilan) {
+    if (maxScore == scoreWatson && maxScore == scoreMilan) {
       resultDiv.innerText =
         "Oh wow! You resemble both Watson and Milan equally. Their biggest similarity is that they are extreely loyal and kind-hearted. They will love anyone they meet on the spot. ";
-    } else if (scoreWatson == scoreChopo) {
+    } else if (maxScore == scoreWatson && maxScore == scoreChopo) {
       resultDiv.innerText =
         "Oh wow! You resemble both Watson and Chopo equally. Their biggest similarity is that they both act extremely tough but as soon as they get scared they could not be more grateful for any support they can get.";
-    } else if (scoreMilan == scoreChopo) {
+    } else if (maxScore == scoreMilan && maxScore == scoreChopo) {
       resultDiv.innerText =
         "Oh wow! You resemble both Milan and Chopo equally. Their biggest similarity as that they love relaxing more than exercise. They enjoy their afternoon naps in the sun together.";
     } else if (scoreWatson == maxScore) {
@@ -125,30 +125,23 @@ async function fetchData() {
     const data = await response.json();
     const horseData = data.filter((item) => item.name === "Horse")[0];
 
-    //Logging the correct data in the console
-    console.log(horseData);
-
-    //Logging the sub-category Taxonomy in the console and adding the keys and values to a list
+    //Adding the keys and values of Taxonomy to a list
     const taxonomy = horseData.taxonomy;
-    console.log(taxonomy);
-    console.log(Object.keys(taxonomy));
     for (const key of Object.keys(taxonomy)) {
-      console.log(key, taxonomy[key]);
       const node = document.createElement("li");
-      const textnode = document.createTextNode(`${key}: ${taxonomy[key]}`);
+      const textnode = document.createTextNode(
+        `${key.replaceAll("_", " ")}: ${taxonomy[key]}`
+      );
       node.appendChild(textnode);
       document.getElementById("horseTaxonomy").appendChild(node);
     }
 
-    //Logging the sub-category Characteristics in the console and adding the keys and values to a list
+    //Adding the keys and values of Characteristics to a list
     const characteristics = horseData.characteristics;
-    console.log(characteristics);
-    console.log(Object.keys(characteristics));
     for (const key of Object.keys(characteristics)) {
-      console.log(key, characteristics[key]);
       const node = document.createElement("li");
       const textnode = document.createTextNode(
-        `${key}: ${characteristics[key]}`
+        `${key.replaceAll("_", " ")}: ${characteristics[key]}`
       );
       node.appendChild(textnode);
       document.getElementById("horseCharacteristics").appendChild(node);
