@@ -104,7 +104,8 @@ function calculateScore() {
 restartButton.addEventListener("click", restartQuiz);
 submitButton.addEventListener("click", calculateScore);
 
-//Accessing the API
+//Following code based and adapted from API Ninjas (https://rapidapi.com/apininjas/api/animals-by-api-ninjas)
+//Accessing the Animals API by API Ninjas
 const url =
   "https://animals-by-api-ninjas.p.rapidapi.com/v1/animals?name=Horse";
 const options = {
