@@ -1,3 +1,4 @@
+/* Following code up to line 121 based and adapted from W3 Schools (https://www.w3schools.com/css/css_rwd_grid.asp) */
 /*include padding and border in total width and height of elements*/
 * {
   box-sizing: border-box;
