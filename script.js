@@ -25,8 +25,54 @@ let scoreWatson;
 let scoreMilan;
 let scoreChopo;
 
+//the following code is from W3 schools (https://www.w3schools.com/howto/howto_js_accordion.asp)
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    //Toggle between adding and removing the "active" class, to highlight the button that controls the panel
+    this.classList.toggle("active");
+
+    //Toggle between hiding and showing the active panel
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
 //restarting the Quiz when the website is fisrt started
-restartQuiz();
+resetQuiz();
+
+//prompts the user to enter their favourite horse in order to display the correct text
+function askFavouriteHorse() {
+  let favHorse = prompt(
+    "Which one of my horses is your favourite?.",
+    "Watson, Milan or Chopo"
+  );
+  let text;
+  switch (favHorse) {
+    case "Watson":
+      text =
+        "Watson is secretly my favourite too! Now start the quiz to see if you are most like him.";
+      break;
+    case "Milan":
+      text =
+        "Everyone loves Milan, he is such a sweetheart! Now start the quiz to see if you are most like him.";
+      break;
+    case "Chopo":
+      text =
+        "Chopo's charcter is so unique! Now start the quiz to see if you are most like him.";
+      break;
+    default:
+      text =
+        "Seems like you are not sure yet which one of my horses is your favourite. Now start the quiz to see which one you are most like!";
+  }
+  document.getElementById("favHorseText").innerHTML = text;
+}
 
 //unchecking all radio buttons by irrating through all radio buttons
 function uncheckAll() {
@@ -36,7 +82,7 @@ function uncheckAll() {
 }
 
 //function to restart the quiz
-function restartQuiz() {
+function resetQuiz() {
   //unchecking all radio buttons
   uncheckAll();
   //setting the scores to 0
@@ -46,6 +92,12 @@ function restartQuiz() {
   //hiding the result division
   resultDiv.classList.add("hide");
   APIDiv.classList.add("hide");
+}
+
+//reloads the entire wensite and resets the quiz
+function restartQuiz() {
+  resetQuiz();
+  window.location.reload();
 }
 
 //function to calculate the score
@@ -126,7 +178,7 @@ async function fetchData() {
     const data = await response.json();
     const horseData = data.filter((item) => item.name === "Horse")[0];
 
-    //Adding the keys and values of Taxonomy to a list
+    //Adding the keys and values of Taxonomy to a list by iterating through the keys
     const taxonomy = horseData.taxonomy;
     for (const key of Object.keys(taxonomy)) {
       const node = document.createElement("li");
@@ -137,7 +189,7 @@ async function fetchData() {
       document.getElementById("horseTaxonomy").appendChild(node);
     }
 
-    //Adding the keys and values of Characteristics to a list
+    //Adding the keys and values of Characteristics to a list by iterating through the keys
     const characteristics = horseData.characteristics;
     for (const key of Object.keys(characteristics)) {
       const node = document.createElement("li");
