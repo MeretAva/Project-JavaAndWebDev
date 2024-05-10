@@ -50,7 +50,7 @@ resetQuiz();
 //prompts the user to enter their favourite horse in order to display the correct text
 function askFavouriteHorse() {
   let favHorse = prompt(
-    "Which one of my horses is your favourite?.",
+    "Which one of my horses is your favourite?",
     "Watson, Milan or Chopo"
   );
   let text;
